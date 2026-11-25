@@ -1,0 +1,130 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --df-accent: #6d28d9;
+    --df-accent-hover: #5b21b6;
+    --df-accent-soft: rgba(109, 40, 217, 0.1);
+    --df-accent-border: rgba(109, 40, 217, 0.28);
+    --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  }
+
+  .dark {
+    --df-accent: #8b5cf6;
+    --df-accent-hover: #7c3aed;
+    --df-accent-soft: rgba(139, 92, 246, 0.14);
+    --df-accent-border: rgba(139, 92, 246, 0.35);
+  }
+
+  [data-accent="indigo"] {
+    --df-accent: #4f46e5;
+    --df-accent-hover: #4338ca;
+    --df-accent-soft: rgba(79, 70, 229, 0.12);
+    --df-accent-border: rgba(79, 70, 229, 0.3);
+  }
+  .dark[data-accent="indigo"] {
+    --df-accent: #6366f1;
+    --df-accent-hover: #4f46e5;
+    --df-accent-soft: rgba(99, 102, 241, 0.15);
+    --df-accent-border: rgba(99, 102, 241, 0.35);
+  }
+
+  [data-accent="blue"] {
+    --df-accent: #2563eb;
+    --df-accent-hover: #1d4ed8;
+    --df-accent-soft: rgba(37, 99, 235, 0.11);
+    --df-accent-border: rgba(37, 99, 235, 0.3);
+  }
+  .dark[data-accent="blue"] {
+    --df-accent: #3b82f6;
+    --df-accent-hover: #2563eb;
+    --df-accent-soft: rgba(59, 130, 246, 0.15);
+    --df-accent-border: rgba(59, 130, 246, 0.35);
+  }
+
+  [data-accent="emerald"] {
+    --df-accent: #059669;
+    --df-accent-hover: #047857;
+    --df-accent-soft: rgba(5, 150, 105, 0.11);
+    --df-accent-border: rgba(5, 150, 105, 0.3);
+  }
+  .dark[data-accent="emerald"] {
+    --df-accent: #10b981;
+    --df-accent-hover: #059669;
+    --df-accent-soft: rgba(16, 185, 129, 0.15);
+    --df-accent-border: rgba(16, 185, 129, 0.35);
+  }
+
+  [data-accent="rose"] {
+    --df-accent: #e11d48;
+    --df-accent-hover: #be123c;
+    --df-accent-soft: rgba(225, 29, 72, 0.11);
+    --df-accent-border: rgba(225, 29, 72, 0.3);
+  }
+  .dark[data-accent="rose"] {
+    --df-accent: #f43f5e;
+    --df-accent-hover: #e11d48;
+    --df-accent-soft: rgba(244, 63, 94, 0.15);
+    --df-accent-border: rgba(244, 63, 94, 0.35);
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.df-accent-bg {
+  background-color: var(--df-accent);
+}
+.df-accent-bg:hover {
+  background-color: var(--df-accent-hover);
+}
+.df-accent-text {
+  color: var(--df-accent);
+}
+.df-accent-soft {
+  background-color: var(--df-accent-soft);
+}
+.df-accent-border {
+  border-color: var(--df-accent-border);
+}
+
+/* Subtle custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(113, 113, 122, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(113, 113, 122, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
